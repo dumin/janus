@@ -1,0 +1,23 @@
+"设置主题
+colorscheme desert
+set guifont=Menlo:h12
+
+"解决gb编码文件乱码
+set encoding=utf-8
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+
+"NERDTree设置
+let NERDTreeIgnore=['\.py[cd]$', '.DS_Store$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$', '\.meta$', '\.bin$']
+let NERDTreeQuitOnOpen=0
+let NERDTreeShowHidden=1
+let NERDTreeShowBookmarks=1
+map <leader>e :NERDTreeFind<CR>
+
+"ctl + shift + f 查找
+map <D-F> :Ack --smart-case<space>
+
+"ctlrP 设置
+let g:ctrlp_by_filename = 1
+let g:ctrlp_regexp_search = 1
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.(git|hg|svn)|node_modules|docs)$' }

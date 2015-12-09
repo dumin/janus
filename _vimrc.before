@@ -1,0 +1,4 @@
+"设置leader
+let mapleader = ','
+let g:mapleader = ','
+
