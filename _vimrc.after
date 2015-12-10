@@ -13,11 +13,27 @@ let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
 map <leader>e :NERDTreeFind<CR>
 
+"Ack配置
 "ctl + shift + f 查找
-map <D-F> :Ack --smart-case<space>
+map <D-F> :Ack<space>
+let g:ackprg="ack -H --nocolor --nogroup --column --type-add --ignore-dir=node_modules --ignore-dir=.git --ignore-dir=.svn --ignore-file=qc\-core.js --ignore-file=qc\-editor.js"
 
 "ctlrP 设置
 let g:ctrlp_by_filename = 1
 let g:ctrlp_regexp_search = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.(git|hg|svn)|node_modules|docs)$' }
+let g:ackprg="ack -H --nocolor --nogroup --column --type-add --ignore-dir=node_modules --ignore-dir=.git --ignore-dir=.svn"
+
+"设置空格Tab
+set smartindent   " Smart indent
+set autoindent    " 打开自动缩进
+set tabstop=4     " 设置Tab键的宽度        [等同的空格个数]
+set shiftwidth=4  " 每一次缩进对应的空格数
+set softtabstop=4 " 按退格键时可以一次删掉 4 个空格
+set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop 按退格键时可以一次删掉 4 个空格
+set expandtab     " 将Tab自动转化成空格    [需要输入真正的Tab键时，使用 Ctrl+V + Tab]
+set shiftround    " 缩进时，取整 use multiple of shiftwidth when indenting with '<' and '>'
+
+"简单工程配置
+
