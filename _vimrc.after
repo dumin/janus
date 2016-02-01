@@ -38,4 +38,7 @@ set shiftround    " 缩进时，取整 use multiple of shiftwidth when indenting
 "行尾空格
 autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :FixWhitespace
 
+"nerdtree根目录作为macvim目录
+let NERDTreeChDirMode=2
+
 "简单工程配置
