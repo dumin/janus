@@ -15,15 +15,15 @@ map <leader>e :NERDTreeFind<CR>
 
 "Ack配置
 "ctl + shift + f 查找
+"brew install the_silver_searcher
 map <D-F> :Ack<space>
-let g:ackprg="ack -H --nocolor --nogroup --column --type-add --ignore-dir=node_modules --ignore-dir=.git --ignore-dir=.svn --ignore-file=qc\-core.js --ignore-file=qc\-editor.js"
+let g:ackprg = 'ag --nogroup --nocolor --column --path-to-agignore=~/.agignore'
 
 "ctlrP 设置
 let g:ctrlp_by_filename = 1
 let g:ctrlp_regexp_search = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.(git|hg|svn)|node_modules|docs)$' }
-let g:ackprg="ack -H --nocolor --nogroup --column --type-add --ignore-dir=node_modules --ignore-dir=.git --ignore-dir=.svn"
 
 "设置空格Tab
 set smartindent   " Smart indent
@@ -35,5 +35,7 @@ set smarttab      " insert tabs on the start of a line according to shiftwidth, 
 set expandtab     " 将Tab自动转化成空格    [需要输入真正的Tab键时，使用 Ctrl+V + Tab]
 set shiftround    " 缩进时，取整 use multiple of shiftwidth when indenting with '<' and '>'
 
-"简单工程配置
+"行尾空格
+autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :FixWhitespace
 
+"简单工程配置

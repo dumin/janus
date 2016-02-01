@@ -1,0 +1,10 @@
+.git
+.svn
+.idea
+node_modules
+qc-editor-debug.js
+qc-editor.js
+qc-core-debug.js
+qc-core.js
+*.swp
+*.bin
