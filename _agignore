@@ -8,3 +8,4 @@ qc-core-debug.js
 qc-core.js
 *.swp
 *.bin
+qc-widget.js

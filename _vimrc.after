@@ -20,7 +20,7 @@ map <D-F> :Ack<space>
 let g:ackprg = 'ag --nogroup --nocolor --column --path-to-agignore=~/.agignore'
 
 "ctlrP 设置
-let g:ctrlp_by_filename = 1
+let g:ctrlp_working_path_mode = 'w'
 let g:ctrlp_regexp_search = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.(git|hg|svn)|node_modules|docs)$' }
@@ -40,5 +40,11 @@ autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,pe
 
 "nerdtree根目录作为macvim目录
 let NERDTreeChDirMode=2
+
+function! s:enterDir(name)
+    execute 'cd  /Users/wudm/coding/h5/qc/' . a:name
+endfunction
+
+command -nargs=+ O :call s:enterDir("<args>")
 
 "简单工程配置
