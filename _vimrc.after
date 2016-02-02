@@ -41,10 +41,14 @@ autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,pe
 "nerdtree根目录作为macvim目录
 let NERDTreeChDirMode=2
 
+"简单工程配置
 function! s:enterDir(name)
     execute 'cd  /Users/wudm/coding/h5/qc/' . a:name
 endfunction
+command! -nargs=+ O :call s:enterDir("<args>")
 
-command -nargs=+ O :call s:enterDir("<args>")
+"自动加载配置
+autocmd! bufwritepost _vimrc.after source %
 
-"简单工程配置
+"映射;为:
+nnoremap ; :
