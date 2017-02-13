@@ -12,6 +12,11 @@ let NERDTreeQuitOnOpen=0
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
 map <leader>e :NERDTreeFind<CR>
+nnoremap <Leader>jp :%!jq .<Enter>
+nnoremap <Leader>ju :%!jq -c .<Enter>
+
+"JSON去除引号的功能
+let g:vim_json_syntax_conceal = 0
 
 "Ack配置
 "ctl + shift + f 查找
